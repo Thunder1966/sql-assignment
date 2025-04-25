@@ -121,17 +121,24 @@ ALTER TABLE projects
     MODIFY technology_stack TEXT,
     MODIFY team_size SMALLINT,
     MODIFY status ENUM('Pending', 'Active', 'Completed', 'On Hold');
-
-ALTER TABLE clients 
-    MODIFY client_name VARCHAR(150),
+desc projects;
+ALTER TABLE clients MODIFY client_name VARCHAR(150),
     MODIFY city VARCHAR(100),
     MODIFY state VARCHAR(100),
     MODIFY zip_code VARCHAR(20);
+    
 
 ALTER TABLE timesheets 
-    MODIFY work_hours FLOAT,
+    MODIFY wostudent_detailsrk_hours FLOAT,
     MODIFY comments TEXT,
     MODIFY is_billable TINYINT(1),
     MODIFY approved_by BIGINT;
 
-
+describe timesheets;
+select * from timesheets;
+insert into timesheets(emp_id)
+values(1);
+insert into timesheets(project_id)
+values(2);
+select * from timesheets;
+select * from clients;
