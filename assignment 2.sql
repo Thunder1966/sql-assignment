@@ -137,5 +137,54 @@ VALUES
 (19, 'Himachal Pradesh', 1, 7400000, 55673, 'Shimla', 'Hindi', '1971'),
 (20, 'Uttarakhand', 1, 11000000, 53483, 'Dehradun', 'Hindi', '2000');
 
-select * from state_info;
-desc state_info;
+UPDATE airlines_info SET status = 'No' WHERE airline_id = 1;
+UPDATE airlines_info SET headquarters = 'Chennai' WHERE airline_id = 2;
+UPDATE airlines_info SET fleet_size = '150' WHERE airline_id = 3;
+UPDATE airlines_info SET website = 'www.newvistara.com' WHERE airline_id = 4;
+UPDATE airlines_info SET year = 2015 WHERE airline_id = 5;
+UPDATE airlines_info SET status = 'Yes' WHERE airline_id = 6;
+UPDATE airlines_info SET headquarters = 'Pune' WHERE airline_id = 7;
+UPDATE airlines_info SET fleet_size = '22' WHERE airline_id = 8;
+UPDATE airlines_info SET website = 'www.flystar.com' WHERE airline_id = 9;
+UPDATE airlines_info SET year = 2016 WHERE airline_id = 10;
+
+UPDATE country_info SET gdp = '3.5 Trillion' WHERE country_id = 1;
+UPDATE country_info SET name = 'Bharat' WHERE country_id = 2;
+UPDATE country_info SET code = 'BH' WHERE country_id = 3;
+UPDATE country_info SET region = 'South Asia' WHERE country_id = 4;
+UPDATE country_info SET population = 1400000000 WHERE country_id = 5;
+UPDATE country_info SET capital_city = 'Delhi' WHERE country_id = 6;
+UPDATE country_info SET official_language = 'English' WHERE country_id = 7;
+UPDATE country_info SET gdp = '4 Trillion' WHERE country_id = 8;
+UPDATE country_info SET code = 'IND' WHERE country_id = 9;
+UPDATE country_info SET name = 'Hindustan' WHERE country_id = 10;
+
+UPDATE state_info SET capital = 'New Mumbai' WHERE state_id = 1;
+UPDATE state_info SET official_language = 'Urdu' WHERE state_id = 2;
+UPDATE state_info SET area_km = 200000 WHERE state_id = 3;
+UPDATE state_info SET total_population = 75000000 WHERE state_id = 4;
+UPDATE state_info SET established_year = '1961' WHERE state_id = 5;
+UPDATE state_info SET capital = 'Ajmer' WHERE state_id = 6;
+UPDATE state_info SET official_language = 'English' WHERE state_id = 7;
+UPDATE state_info SET area_km = 85000 WHERE state_id = 8;
+UPDATE state_info SET total_population = 60000000 WHERE state_id = 9;
+UPDATE state_info SET established_year = '2015' WHERE state_id = 10;
+
+
+DELETE FROM airlines_info WHERE status = 'No';
+DELETE FROM country_info WHERE population > 1300000000 AND code = 'IN';
+DELETE FROM state_info WHERE total_population < 10000000 OR area_km > 300000;
+DELETE FROM airlines_info WHERE airline_id IN (11,12,13);
+DELETE FROM country_info WHERE country_id NOT IN (1,2,3,4,5);
+DELETE FROM state_info WHERE state_id BETWEEN 15 AND 20;
+DELETE FROM airlines_info WHERE airline_id NOT BETWEEN 2 AND 8;
+
+SELECT * FROM airlines_info WHERE fleet_size = '150';
+SELECT * FROM country_info WHERE official_language = 'hindi';
+SELECT * FROM state_info WHERE area_km < 100000;
+SELECT * FROM airlines_info WHERE status = 'Yes' AND year > 2010;
+SELECT * FROM country_info WHERE name = 'India' OR name = 'Bharat';
+SELECT * FROM state_info WHERE state_id IN (1,2,3,4,5);
+SELECT * FROM airlines_info WHERE airline_id NOT IN (1,3,5);
+SELECT * FROM country_info WHERE country_id BETWEEN 1 AND 10;
+SELECT * FROM state_info WHERE state_id NOT BETWEEN 6 AND 15;
